@@ -80,8 +80,27 @@ class Main(Resource):
             jsonout(course)
             return req
 
+    #def options(self, course_id):
+    #    resp = Response("Foo bar baz")
+    #    resp.headers['Access-Control-Allow-Origin'] = '*'
+    #    return resp
+
+
+class Pass(Resource):
+    def get(self):
+        return course
+
+    def post(self):
+        return Response("Try add number of element", status=400, mimetype='application/json')
+
+    def delete(self):
+        return Response("Try add number of element", status=400, mimetype='application/json')
+
+    def put(self):
+        return Response("Try add number of element", status=400, mimetype='application/json')
 
 api.add_resource(Main, "/api/main/<course_id>")
+api.add_resource(Pass, "/api/main/")
 api.init_app(app)
 
 if __name__ == "__main__":
